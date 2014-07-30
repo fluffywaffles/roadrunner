@@ -98,13 +98,14 @@ function switchNavHeading(el) {
 [].forEach.call(secondaryNav, function(el) {
   extend(el);
   
-  [].forEach.call(el.children, extend);
-  
-  el.addEventListener('click', function() {
-    [].forEach.call(secondaryNav, function(el) {
-      el.removeClass('active');
+  [].forEach.call(el.children, function(c) {
+    extend(c);
+    c.addEventListener('click', function() {
+      [].forEach.call(el.children, function(c) {
+        c.removeClass('active');
+      });
+      c.addClass('active');
     });
-    el.addClass('active');
     //swap out article.content
   });
 });
