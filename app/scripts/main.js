@@ -44,6 +44,10 @@ function nameToDataTag(txt) {
              .replace(/[A-Z ]/g, function(_) { return _ == " " ? "-" : _.toLowerCase(); })
 }
 
+function rgbStrTrim(rgbs) {
+  return rgbs.replace(/rgb\(|rgba\(|\)/g, '');
+}
+
 var primaryNav   = document.querySelectorAll('.primary > li');
 var secondaryNav = document.querySelectorAll('.secondary');
 var navBits       = document.querySelectorAll('div.marker');
@@ -80,10 +84,12 @@ function switchNavHeading(el) {
   el.parentNode.style.borderBottomColor = bc;
   el.parentNode.style.boxShadow = '0px 5px 5px -5px ' + bc;
   navBit.style.background = bc;
+  
+  var rgb_bc = rgbStrTrim(bc);
   navBit.style.boxShadow = '-3px 0px 1px -1px rgba(' + 
-                              bc + ', 0.5),' +
+                              rgb_bc + ', 0.5),' +
                            '3px  0px 1px -1px rgba(' +
-                              bc + ', 0.5)';
+                              rgb_bc + ', 0.5)';
 }
 
 [].forEach.call(primaryNav, function(el, i) {
