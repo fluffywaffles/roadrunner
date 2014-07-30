@@ -1,0 +1,84 @@
+doctype html
+html.no-js
+
+  head
+    meta(charset='utf-8')
+    title Roadrunner Computers
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    // build:css styles/glob.css
+    link(rel='stylesheet', href='styles/main.css')
+    // endbuild
+
+  body
+    != "<!--[if lt IE 9]>"
+    p.browsehappy
+      | You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    != "<![endif]-->"
+    
+    header
+      .v-center
+        img(src='images/roadrunnerlogo.png')
+    
+    nav
+      ol.primary
+        li.tech-tips  Tech Tips
+        li.services.active  Services
+        li.contact-us Contact Us
+      
+      .subnav
+
+        ol.secondary.tech-tips
+          li.active  Blog
+          li  Videos
+          .marker
+        
+        ol.secondary.services.active
+          li.active  Home
+          li  Computers
+          li  Business Solutions
+          li  Security
+          li  Pricing
+          .marker
+
+        ol.secondary.contact-us
+          li.active  Contact Form
+          li  Directions
+          .marker
+    
+    section.content(data-content="home")
+      h2 No hype, just good, quality service
+        br
+        small At Roadrunner Computers, our philosophy is simple &#8212; sell a high quality product and offer outstanding service.
+      
+      h3 
+        strong Customer satisfaction is our number one goal.
+      
+      p Major computer companies tend to focus on using slick marketing to sell cheap, substandard "after rebate" computers. As a result, more and more people are realizing the advantages of buyin a custom-built computer.
+      
+      p Before you make a buying decision base on the "after rebate" price, take some time to learn more about how rebates work.
+      
+      p Roadrunner Computers was created with the ambitious goal of breaking this trend to provide both quality and reliable computers. We can provide you with one of our custom built systems, or, if you prefer, we also carry select preconfigured Dell and Lenovo computers.
+        
+    
+    footer.fullerback
+        h2. And Goodbye. &hearts;
+         
+    // Google Analytics
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-52091871-2','roadrunnercomputers.com');ga('send','pageview');
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src='bower_components/jquery/dist/jquery.js')
+    // endbower
+    // endbuild
+    // build:js scripts/glob.js
+    script(src='scripts/polyfills.js')
+    script(src='scripts/main.js')
+    // endbuild
