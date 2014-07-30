@@ -26,7 +26,8 @@ gulp.task('scripts', function () {
 
 gulp.task('jade', function () {
     return gulp.src('app/jade/**/*.jade')
-        .pipe($.jade())
+        //NOTE: jade output must be pretty for useref to work.
+        .pipe($.jade({pretty: true}))
         .pipe(gulp.dest('app/'));
 });
 
