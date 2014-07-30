@@ -40,7 +40,7 @@ function rgbStrTrim(rgbs) {
 
 var primaryNav   = document.querySelectorAll('.primary > li');
 var secondaryNav = document.querySelectorAll('.secondary');
-var navBits       = document.querySelectorAll('div.marker');
+var navBits      = document.querySelectorAll('div.marker');
 
 function switchNavHeading(el) {  
   
@@ -52,12 +52,12 @@ function switchNavHeading(el) {
   
   var navBit = [].filter.call(navBits,
     function(nb) {
+      // really weak equality :P
       return nb.parentNode.className == sub.className;
     })[0];
   
   [].forEach.call(primaryNav, function(el) {
     el.removeClass('active');
-    navBit.removeClass(el.textContent);
   });
   
   [].forEach.call(sub.children, function(el) {
@@ -96,12 +96,14 @@ function switchNavHeading(el) {
   
   [].forEach.call(el.children, function(c) {
     extend(c);
-    c.addEventListener('click', function() {
-      [].forEach.call(el.children, function(c) {
-        c.removeClass('active');
+    if(! [].some.call(navBits, function(nb) { return nb == c; })) {
+      c.addEventListener('click', function() {
+        [].forEach.call(el.children, function(c) {
+          c.removeClass('active');
+        });
+        c.addClass('active');
       });
-      c.addClass('active');
-    });
+    }
     //swap out article.content
   });
 });
