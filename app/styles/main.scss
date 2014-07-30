@@ -143,17 +143,23 @@ nav {
 
       &.tech-tips {
         border-color: rgb(110, 110, 255);
-        border-image: linear-gradient(to right,  #2f2fe0, #6e6eff, #2f2fe0) 1 1 1 stretch;
+        @media only screen and (min-width: 1224px) {
+          border-image: linear-gradient(to right,  #2f2fe0, #6e6eff, #2f2fe0) 1 1 1 stretch;
+        }
       }
       
       &.services {
         border-color: rgb(255, 86, 86);
-        border-image: linear-gradient(to right, #db2d2d, #ff5656, #db2d2d) 1 1 1 stretch; 
+        @media only screen and (min-width: 1224px) {
+          border-image: linear-gradient(to right, #db2d2d, #ff5656, #db2d2d) 1 1 1 stretch; 
+        }
       }
       
       &.contact-us { 
         border-color: rgb(15, 165, 15);
-        border-image: linear-gradient(to right, #0b810b, #0fa50f, #0b810b) 1 1 1 stretch;
+        @media only screen and (min-width: 1224px) {
+          border-image: linear-gradient(to right, #0b810b, #0fa50f, #0b810b) 1 1 1 stretch;
+        }
       }
       
       &.active {
