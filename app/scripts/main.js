@@ -1,16 +1,14 @@
 addClass = function(el, c) {
   var i = el.className.indexOf(c);
   if(i > -1) return el;
-  else return (el.className += ' ' + c.trim(), el); 
+  else return (el.className = (el.className + ' ' + c.trim()).trimLeft(), el); 
 }
 
 removeClass = function(el, c) {
   var i = el.className.indexOf(c);
   if(i < 0) return el;
   else return (el.className = el.className.replace(c.trim(), '')
-                                          .split(' ')
-                                          .filter(function(e){return e != ''})
-                                          .join(' '), 
+                                          .replace('  ', ' '), 
                el);
 }
 
