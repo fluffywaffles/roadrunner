@@ -127,7 +127,12 @@ nav {
       
       position: relative;
       top: -40px;
-      margin-bottom: -40px;
+      margin-bottom: -55px;
+      //making ||mb|| > ||top offset||
+      // produces the short "collapse" effect when switching -
+      // the padding & margin on the active tab are what
+      // directly affect the position of the subnav so long as
+      // mb is at least as "large" as top offset. (From on-edge)
       z-index: 0;
       
       text-align: center;
@@ -177,8 +182,8 @@ nav {
       }
       
       &:hover {
-        padding-bottom: 20px;
-        margin-top: -5px;
+        padding-bottom: 25px;
+        margin-top: -10px;
       }
       
     }
