@@ -42,6 +42,26 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
+@mixin stacked-shift-anim() {
+  //stack normally to the left
+  left: -100%;
+  transition: left ease 0.5s;
+  z-index: 998;
+  
+  &.active {
+    // active in middle
+    left: 0;
+    z-index: 999;
+    transition: left ease 0.5s;
+
+    & ~ .secondary {
+      // push all coming AFTER
+      // .active to the right
+      left: 100%;
+    }
+  }
+}
+
 // BOILERPLATE GENERATED
 .browsehappy {
     margin: 0.2em 0;
@@ -195,25 +215,30 @@ nav {
   }
   
   .secondary {
-    position: absolute;
-    z-index: 998;
     border-bottom: 5px solid rgb(220, 220, 220);
     transition: opacity ease 0.8s, left ease 0.5s;
     background: white;
     left: -100%;
-    
+    position: absolute;  
+    z-index: 998;
+  
     &.active {
+      // active in middle
       left: 0;
       z-index: 999;
       transition: left ease 0.5s;
-      
+
       & ~ .secondary {
+        // push all coming AFTER
+        // .active to the right
         left: 100%;
       }
-      
-      & > .marker {
-        @include opacity(1);
-      }
+    }
+    
+    // add opacity fade in for marker
+    // to stacked-shift-anim
+    &.active > .marker {
+      @include opacity(1);
     }
     
     & > .marker {
@@ -257,3 +282,32 @@ nav {
   }
 }
 
+.content {
+  position: relative;
+  & > section { 
+    position: absolute;
+    max-width: 100%;
+    transition: opacity ease 0.1s, left ease 0.5s;
+    
+    left: -100%;
+    z-index: 998;
+    top: 0;
+    
+    @include opacity(0);
+  
+    &.active {
+      // active in middle
+      @include opacity(1);
+      left: 0;
+      z-index: 999;
+      transition: left ease 0.5s;
+      position: relative;
+
+      & ~ section {
+        // push all coming AFTER
+        // .active to the right
+        left: 100%;
+      }
+    }
+  }
+}
