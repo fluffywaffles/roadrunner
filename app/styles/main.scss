@@ -286,7 +286,7 @@ nav {
   position: relative;
   & > section { 
     position: absolute;
-    max-width: 100%;
+    width: 100%;
     transition: opacity ease 0.1s, left ease 0.5s;
     
     left: -100%;
@@ -299,6 +299,7 @@ nav {
       // active in middle
       @include opacity(1);
       left: 0;
+      height: auto;
       z-index: 999;
       transition: left ease 0.5s;
       position: relative;
