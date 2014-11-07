@@ -20,20 +20,21 @@ html
     header
       .v-center
         img(src='images/roadrunnerlogo.png')
+        
+    .everything
+      include ./partials/nav.jade
 
-    include ./partials/nav.jade
+      .content
+        each content in content_pages
+          if content.name == 'home'
+            section.active#home-content(data-content="home")
+              != content.raw
+          else
+            section(data-content="#{content.name}")
+              != content.raw
 
-    .content
-      each content in content_pages
-        if content.name == 'home'
-          section.active#home-content(data-content="home")
-            != content.raw
-        else
-          section(data-content="#{content.name}")
-            != content.raw
-
-    footer.fullerback
-        h2. And Goodbye. &hearts;
+      footer.fullerback
+          h2. And Goodbye. &hearts;
 
     // Google Analytics
     script.
