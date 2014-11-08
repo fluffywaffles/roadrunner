@@ -28,14 +28,32 @@ function qq(q) {
 }
 
 var nav = qq('nav')[0];
+var content = qq('.content')[0];
+content.lastScroll = 0;
+var html    = qq('html')[0];
 
 var initialNavOff = nav.offsetTop;
 
-window.onscroll = function(ev) {
-  var off = initialNavOff - window.scrollY;
-  off = off > 0 ? off : 0;
-  nav.style.top = off + "px";
-};
+window.addEventListener('scroll', function(ev) {
+  if(window.scrollY >= initialNavOff - 10 && content.lastScroll < 1) {
+    window.scrollTo(0, initialNavOff - 10);
+    html.style.overflowY = 'hidden';
+    content.style.overflowY = 'scroll';
+  } else {
+    content.lastScroll = 0;
+  }
+});
+
+content.addEventListener('scroll', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  if (content.scrollTop == 0 && content.lastScroll > content.scrollTop) {
+    html.style.overflowY = 'scroll';
+    content.style.overflowY = 'hidden';
+  } else {
+    content.lastScroll = content.scrollTop;
+  }
+});
 
 function nameToDataTag(txt) {
   return txt.trim()

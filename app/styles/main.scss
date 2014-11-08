@@ -39,6 +39,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 html, body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // sort of like fluid-container
@@ -82,10 +87,25 @@ header {
 }
 
 nav {
-  position: fixed;
-  top: 80%;
+  position: absolute;
+  top: calc(85% - 20px);
   width: 100%;
-  height: 100%;
+  
+  ul {
+    list-style-type: none;
+    li {
+      &:hover {
+        text-decoration: underline;
+        color: #4c9cb5;
+        cursor: pointer;
+      }
+      &.heading {
+        position: relative;
+        left: -10px;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .tri-pt {
@@ -94,11 +114,13 @@ nav {
   left: 0;
   background: transparent;
   width: 1px;
-  border-left: 30px solid darken(white, 15%);
+  border-left: 10px solid darken(white, 12%);
   border-top: 20px solid transparent;
-  height: 85px;
+  //border-bottom: 20px solid transparent;
+  height: 101%;
   z-index: 2;
   margin-bottom: -75px;
+  //transform: rotateX(180deg);
 }
 
 .endcap {
@@ -109,8 +131,8 @@ nav {
   height: 65px;
   margin-bottom: -75px;
   background: white;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.3),
-              0px -1px 5px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.2),
+              0px -1px 1px rgba(0,0,0,0.1);
   
   color: lighten(black, 25%);
   display: table;
@@ -133,19 +155,23 @@ nav {
   top: 0;
   left: -175px;
   width: 175px;
-  height: 100%;
+  padding-top: 100%;
   margin-right: -175px;
-  padding: 20px 15px;
   background: white;
-  box-shadow: 3px 0 3px rgba(0,0,0,0.3);
+  box-shadow: 1px 3px 3px rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(0,0,0,0.2);
   float: left;
+  
+  ul {
+    position: absolute;
+    top: 20px;
+  }
 }
 
 .content {
-  float: left;
-  margin-top: 75px;
-  width: 80%;
-  & > section { 
-    width: 100%;
-  }
+  position: absolute;
+  margin-top: 65px;
+  width: calc(100% - 175px);
+  height: calc(100% - 95px);
+  overflow-y: hidden;
 }
