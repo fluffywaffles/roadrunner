@@ -52,14 +52,9 @@ p {
   font-size: 1.2rem;
 }
 
-// sort of like fluid-container
-.fullerback {
+header, footer, .content {
   @include span-columns(12);
   padding: 10px 50px;
-}
-
-header, footer, .content {
-  @extend .fullerback;
 }
 
 .v-center {
@@ -90,6 +85,12 @@ header {
 .everything {
   @include span-columns(12);
   padding-left: 175px;
+}
+
+.fullerback {
+  position: relative;
+  left: -50px;
+  width: calc(100% + 100px);
 }
 
 nav {
@@ -202,14 +203,14 @@ nav {
     content: '.';
     color: transparent;
     background: rgb(235, 60, 60);
-    @include span-columns(3);
+    @include span-columns(2);
   }
 }
 
 .pointedly {
   &:before {
     content: '\2192';
-    @include span-columns(1);
+    padding-right: 30px;
   }
 }
 
@@ -240,6 +241,9 @@ nav {
       padding-right: 15%;
     }
   }
+  .content section p {
+    width: 75%;
+  }
 }
 
 .square {
@@ -267,6 +271,16 @@ nav {
 
 .business-img {
   background: url('/images/business.jpg');
+  height: 400px;
+  background-attachment: fixed;
+  
+  &+h2 {
+    position: relative;
+    top: -67px;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    font-size: 3rem;
+  }
 }
 
 .smf-img {
