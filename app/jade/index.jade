@@ -1,15 +1,17 @@
 doctype html
 html
+  //Site by Jordan Timmerman, HypeLab LLC 
 
   head
     meta(charset='utf-8')
     title Roadrunner Computers
     meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //meta(name='viewport', content='width=device-width, initial-scale=1')
     // Place favicon.ico and apple-touch-icon.png in the root directory
     // build:css styles/glob.css
     link(rel='stylesheet', href='styles/main.css')
     // endbuild
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
 
   body
     != "<!--[if lt IE 9]>"
@@ -19,7 +21,7 @@ html
 
     header
       .v-center
-        img(src='images/roadrunnerlogo.png')
+        img(src='./images/roadrunnerlogo.png')
         
     .everything
       include ./partials/nav.jade
@@ -27,15 +29,18 @@ html
       .content
         each content in content_pages
           if content.name == 'home'
-            section.active#home-content(data-content="home")
+            section.active#home
               != content.raw
           else
-            section(data-content="#{content.name}")
+            section(id="#{content.name}")
               != content.raw
 
         footer
-          h2. And Goodbye. &hearts;
-
+          small A carefully handcrafted website by 
+          a(href='wearehypelab.com')
+            | HypeLab
+          | . &copy; 2014.
+          
     // Google Analytics
     script.
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

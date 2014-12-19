@@ -8,13 +8,13 @@ nav
         span | ?
   .sidebar
     ul
-      li.heading.active  Home
-      li  Computers
-      li  Pricing
-      li  Business Solutions
-      li  Security
-      li.heading Tech Tips
-      li  Blog
-      li.heading Contact Us
-      li  Contact Form
-      li  Directions
+      li.heading.active(data-goto='#home')  Home
+      li(data-goto='#computers')  Computers
+      li(data-goto='#pricing')  Pricing
+      li(data-goto='#business-solutions')  Business Solutions
+      li(data-goto='#security')  Security
+      li.heading(data-goto='#blog') Tech Tips
+      li(data-goto='#blog')  Blog
+      li.heading(data-goto='#contact-form') Contact Us
+      li(data-goto='#contact-form')  Contact Info
+      li(data-goto='.directions')  Directions

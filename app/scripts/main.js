@@ -55,16 +55,13 @@ content.addEventListener('scroll', function(e) {
   }
 });
 
-function nameToDataTag(txt) {
-  return txt.trim()
-            .replace(/[A-Z ]/g, function(_) { return _ == " " ? "-" : _.toLowerCase(); });
-};
+window.onresize = function() {
+  initialNavOff = nav.offsetTop;
+}
 
-function rgbStrTrim(rgbs) {
-  return rgbs.replace(/rgb\(|rgba\(|\)/g, '');
-};
-
-var primaryNav   = document.querySelectorAll('.primary > li');
-var secondaryNav = document.querySelectorAll('.secondary');
-var navBits      = document.querySelectorAll('div.marker');
-var contentPages = document.querySelectorAll('.content > section');
+$('nav .sidebar li').click(function() {
+  var goto = $(this).data('goto');
+  $('.content').animate({
+    scrollTop: qq(goto)[0].offsetTop
+  }, 400);
+});
