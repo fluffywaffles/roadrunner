@@ -180,7 +180,7 @@ nav {
     top: 0;
     left: -1 * $sidebar-width;
     width: $sidebar-width;
-    padding-top: 100%;
+    padding-top: 1200px;
     margin-right: -1 * $sidebar-width;
     background: white;
     box-shadow: 1px 3px 3px rgba(0,0,0,0.3),
@@ -395,7 +395,7 @@ nav {
   width: calc(100% + 100px);
   max-height: 800px;
   margin: 0 auto;
-  background: url('/images/call.jpg');
+  background: url('../images/call.jpg');
   background-size: 115%;
   background-position: 100% 0%;
   padding: 15% 0 40% 50%;
@@ -438,3 +438,8 @@ footer {
   color: rgba(0,0,0,0.5);
   text-align: right;
 }
+
+// specialized small screen style adaptations
+// < 950px:
+//   clear .third s
+//   change sizing of .contact-us
