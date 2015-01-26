@@ -255,6 +255,7 @@ nav {
   
     p, ul, ol, h3, h4, h5, h6 {
       padding: 20px 0;
+      padding-right: 20px;
       position: relative;
       @include shift(2);
     }
@@ -372,8 +373,6 @@ nav {
 
   .contact-us {
     position: relative;
-    left: -50px;
-    width: calc(100% + 100px);
     max-height: 800px;
     margin: 0 auto;
     background: url('../images/call.jpg');
@@ -508,7 +507,7 @@ footer {
     
     .third, .half {
       width: 90%;
-      margin-left: 10%;
+      margin-left: 5%;
       clear: both;
     }
 
@@ -518,7 +517,7 @@ footer {
 
       .message-bubble {
         width: 280px;
-        left: -50px;
+        left: -100px;
         top: 50px;
 
         p {
