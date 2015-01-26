@@ -54,7 +54,6 @@ html, body {
 
 header, footer, .content {
   @include span-columns(12);
-  padding: 10px 50px;
 }
 
 .v-center {
@@ -244,6 +243,7 @@ nav {
 
   h1 {
     text-align: center;
+    padding: 0 15px;
     
     small {
       font-size: 60%; 
@@ -256,7 +256,6 @@ nav {
     p, ul, ol, h3, h4, h5, h6 {
       padding: 20px 0;
       position: relative;
-      left: -50px;
       @include shift(2);
     }
     
@@ -266,11 +265,10 @@ nav {
     
     h2 {
       margin-bottom: 40px;
-      width: calc(100% + 100px);
+      width: 100%;
       
       &.trailed {
         position: relative;
-        left: -50px;
         float: none;
 
         &:before, &::before {
@@ -329,12 +327,6 @@ nav {
     border-radius: 50%;
     background-color: lighten(gray, 40%);
     background-repeat: no-repeat;
-  }
-
-  .fullerback {
-    position: relative;
-    left: -50px;
-    width: calc(100% + 100px);
   }
 
   .fill-bg {
@@ -445,7 +437,7 @@ nav {
       margin: 15px 0 0 0;
     }
     iframe {
-      @extend .fullerback;
+      width: 100%;
       margin: 0;
       height: 300px;
     }
@@ -454,7 +446,6 @@ nav {
 }
 
 footer {
-  @extend .fullerback;
   color: rgba(0,0,0,0.5);
   text-align: right;
   
@@ -507,6 +498,14 @@ footer {
 
 @media all and (max-width: 790px) {
   .content {
+    p, h3, h4, h5, h6 {
+      @include shift(1);
+    }
+    
+    ul, ol {
+      @include shift(2);
+    }
+    
     .third, .half {
       width: 90%;
       margin-left: 10%;
