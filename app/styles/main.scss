@@ -355,7 +355,6 @@ nav {
       text-shadow: 0px 0px 5px black;
       font-size: 2rem;
       margin-bottom: 0;
-      width: calc(100% + 100px);
     }
   }
 
@@ -496,13 +495,17 @@ footer {
 }
 
 @media all and (max-width: 790px) {
-  .content {
+  .content section {
     p, h3, h4, h5, h6 {
       @include shift(1);
     }
     
     ul, ol {
       @include shift(2);
+    }
+    
+    h2.trailed::before {
+      width: 10%;
     }
     
     .third, .half {
