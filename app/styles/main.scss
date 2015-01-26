@@ -252,7 +252,6 @@ nav {
   
   section {
     @include span-columns(12);
-    padding: 50px 0;
   
     p, ul, ol, h3, h4, h5, h6 {
       padding: 20px 0;
@@ -261,27 +260,31 @@ nav {
       @include shift(2);
     }
     
+    ol, ul {
+      @include shift(3);
+    }
+    
     h2 {
       margin-bottom: 40px;
+      width: calc(100% + 100px);
+      
+      &.trailed {
+        position: relative;
+        left: -50px;
+        float: none;
+
+        &:before, &::before {
+          content: '.';
+          color: transparent;
+          background: rgb(235, 60, 60);
+          text-shadow: none;
+          @include span-columns(2);
+        }
+      }
     }
     
     &:last-of-type {
       padding-bottom: 0;
-    }
-  }
-
-
-  .trailed {
-    position: relative;
-    left: -50px;
-    @include span-columns(12);
-    float: none;
-    &:before, &::before {
-      content: '.';
-      color: transparent;
-      background: rgb(235, 60, 60);
-      text-shadow: none;
-      @include span-columns(2);
     }
   }
 
@@ -313,6 +316,7 @@ nav {
   .half {
     @include span-columns(6);
     text-align: center;
+    padding: 20px 0;
   }
 
   .square {
