@@ -65,3 +65,11 @@ $('nav .sidebar li').click(function() {
     scrollTop: qq(goto)[0].offsetTop
   }, 400);
 });
+
+$('.hamburger').click(function(e) {
+  e.stopPropagation();
+  $('.sidebar, .tri-pt').addClass('slide-out');
+  $('body').click(function() {
+    $('.sidebar, .tri-pt').removeClass('slide-out');
+  });
+});
