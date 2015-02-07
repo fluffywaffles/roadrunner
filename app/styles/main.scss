@@ -474,11 +474,16 @@ footer {
   color: rgba(0,0,0,0.5);
   text-align: right;
   padding: 20px;
+  img {
+    max-width: 200px;
+    display: block;
+    float: left;
+  }
   
   small {
-    width: 100%;
-    float: left;
-    clear: both;
+    white-space: pre-line;
+    float: right;
+    clear: right;
   }
 }
 
@@ -565,5 +570,9 @@ footer {
         }
       }
     }
+  }
+  
+  footer img {
+    float: right;
   }
 }
