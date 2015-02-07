@@ -73,3 +73,11 @@ $('.hamburger').click(function(e) {
     $('.sidebar, .tri-pt').removeClass('slide-out');
   });
 });
+
+$('.map-embed').click(function(e) {
+  $(this).find('iframe').css({pointerEvents: "auto"});
+});
+
+$('.map-embed').find('iframe').on('mouseout', function() {
+  $(this).css({pointerEvents: "none"});
+});
