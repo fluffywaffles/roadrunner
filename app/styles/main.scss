@@ -44,9 +44,9 @@ html, body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
-  
+
   font-size: 17px;
-  
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -72,13 +72,13 @@ header {
   background-size: cover;
   background-attachment: fixed;
   background-position: center 40%;
-  
+
   @include ie-background-cover('../images/bigOleBanner.jpg');
-  
+
   img {
     display: block;
     margin: 0 auto;
-    
+
     width: 100%;
     max-width: 350px;
   }
@@ -87,19 +87,19 @@ header {
 .everything {
   @include span-columns(12);
   padding-left: $sidebar-width;
-  
+
   $break-width: 1400px;
-  
+
   @media all and (min-width: #{$break-width}) {
     .content {
       $offset: $break-width/2 - $sidebar-width;
       width: $break-width - $sidebar-width;
       left: calc(50% - #{$offset});
     }
-    
+
     nav {
       margin-left: calc(50% - #{$break-width/2});
-      
+
       .endcap {
         width: $break-width;
       }
@@ -112,7 +112,7 @@ nav {
   top: calc(85% - 20px);
   width: 100%;
   z-index: 1;
-  
+
   ul {
     list-style-type: none;
     li {
@@ -197,15 +197,15 @@ nav {
       font-size: $sidebar-width/13;
     }
   }
-  
+
   .tri-pt.slide-out {
     left: 0;
   }
-  
+
   .sidebar.slide-out {
     left: -200px;
   }
-  
+
   .hamburger {
     position: absolute;
     top: 15px;
@@ -218,11 +218,11 @@ nav {
     transition: box-shadow ease 0.2s;
     cursor: pointer;
     z-index: 1;
-    
+
     &:hover {
       box-shadow: 0 1px 4px rgba(0,0,0,0.1) !important;
     }
-    
+
     &:active {
       box-shadow: inset 0 0 4px rgba(0,0,0,0.2) !important;
     }
@@ -244,30 +244,30 @@ nav {
   h1 {
     text-align: center;
     padding: 0 15px;
-    
+
     small {
-      font-size: 60%; 
+      font-size: 60%;
     }
   }
-  
+
   section {
     @include span-columns(12);
-  
+
     p, ul, ol, h3, h4, h5, h6 {
       padding: 20px 0;
       padding-right: 20px;
       position: relative;
       @include shift(2);
     }
-    
+
     ol, ul {
       @include shift(3);
     }
-    
+
     h2 {
       margin-bottom: 40px;
       width: 100%;
-      
+
       &.trailed {
         position: relative;
         float: none;
@@ -281,7 +281,7 @@ nav {
         }
       }
     }
-    
+
     &:last-of-type {
       padding-bottom: 0;
     }
@@ -304,7 +304,7 @@ nav {
       content: '\2192';
       padding-right: 20px;
     }
-    
+
     &:after {
       content: '\2190';
       padding-left: 20px;
@@ -452,7 +452,7 @@ nav {
     h2 {
       margin: 15px 0 0 0;
     }
-    
+
     .map-embed {
       width: 100%;
       height: 300px;
@@ -479,7 +479,7 @@ footer {
     display: block;
     float: left;
   }
-  
+
   small {
     white-space: pre-line;
     float: right;
@@ -518,7 +518,7 @@ footer {
   .hamburger {
     display: inline-block !important;
   }
-  
+
 }
 
 @media all and (max-width: 790px) {
@@ -526,15 +526,15 @@ footer {
     p, h3, h4, h5, h6 {
       @include shift(1);
     }
-    
+
     ul, ol {
       @include shift(2);
     }
-    
+
     h2.trailed::before {
       width: 10%;
     }
-    
+
     .third, .half {
       width: 90%;
       clear: both;
@@ -544,12 +544,12 @@ footer {
         margin: 0 auto;
       }
     }
-    
+
     .third {
       padding-left: 10%;
       padding-right: 5%;
     }
-    
+
     .half + .half {
       padding-left: 10%;
       padding-right: 5%;
@@ -571,7 +571,7 @@ footer {
       }
     }
   }
-  
+
   footer img {
     float: right;
   }
